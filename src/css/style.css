@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+:root {
+	--blue: #2772FC;
+	--grey: #26243a;
+	--lightgrey: #6C83AF;
+	--divider: #D1DCF0;
+}
+
+*{
+	margin:0;
+	padding:0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background: #F7F9FB;
+	font-size: 1rem;
+	color: var(--grey);
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: var(--blue);
+	position: relative;
+}
+
+a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -5px;
+	border-top: 2px dotted var(--blue);
+	transition: 0.5s;
+}
+
+a:hover::after {
+	border-top: 2px solid var(--blue);
+}
+
+
+
+#wrapper{
+	background: #fff;
+	width: 50%;
+	margin: auto;
+	position: relative;
+	height: 100%;
+}
+
+#accent {
+	background: var(--blue);
+	width: 100%;
+	height: 40px;
+}
+
+.container {
+	padding: 40px;
+}
+
+.line {
+	border-bottom: 1px solid var(--divider);
+}
+
+button {
+	border: none;
+	color: #fff;
+	box-shadow: none;
+	background: var(--blue);
+	font-weight: bold;
+	padding: 15px 25px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input, select {
+	border: 1px solid var(--divider);
+	color: var(--grey);
+	padding: 15px;
+}
+
+.combinedinput {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 0;
+}
+
+.combinedinput div {
+	background: #e3e7f0;
+	border: 1px solid var(--divider);
+	line-height: 2.9;
+	padding: 0 15px;
+	font-weight: bold;
+	color: var(--lightgrey);
+}
+
+
+
+
+
+

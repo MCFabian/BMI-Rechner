@@ -4,10 +4,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>BMI-Rechner</title>
 		<script src="src/js/bmi.js"></script>
+		<link rel="stylesheet" href="src/css/style.css">
 	</head>
 
 	<body>
-		<h1>BMI-Rechner</h1>
+<!-- 		<h1>BMI-Rechner</h1>
 
 		<label>Geschlecht:
 			<select name="geschlecht" id="geschlecht">
@@ -35,6 +36,50 @@
 			</select>
 		</label>
 
-		<button type="button" id="berechnen" onclick="berechnen()">berechnen</button>
+		<button type="button" id="berechnen" onclick="berechnen()">berechnen</button> -->
+
+
+		<div id="wrapper">
+			<div id="accent"></div>
+			<div class="container line">
+				<h1>BMI Rechner</h1>
+				<p>Berechne deinen BMI nach Geschlecht und Alter. Den Quellcode findest du auf <a href="https://github.com/MCFabian/BMI-Rechner">GitHub</a></p>
+			</div>
+			<div class="container line">
+				<h2>1. Bitte wähle dein Geschlecht aus.</h2>
+
+				<fieldset>
+					<input type="radio" id="female" name="gender" value="female">
+					<label for="female">Female</label><br>
+					<input type="radio" id="male" name="gender" value="male">
+					<label for="male">Male</label><br>
+				</fieldset>
+
+				<h2>2. Verrate uns deine Körpergröße.</h2>
+				<div class="combinedinput">
+					<input maxlength="3" id="size" placeholder="Körpergröße" type="text"><div>CM</div>
+				</div>
+
+				<h2>3. Verrate uns dein Körpergewicht.</h2>
+				<div class="combinedinput">
+					<input maxlength="3" id="weight" placeholder="Gewicht" type="text"><div>KG</div>
+				</div>
+
+				<h2>4. Magst du mir sagen, wie alt du bist?</h2>
+				<select name="age" id="age">
+					<option value="0">19-24</option>
+					<option value="1">25-34</option>
+					<option value="2">35-44</option>
+					<option value="3">45-54</option>
+					<option value="4">55-64</option>
+					<option value="5">&uuml;ber 64</option>
+				</select>
+
+			</div>
+			<div class="container">
+				<button onclick="berechnen()" >BMI berechnen</button>
+			</div>
+		</div>
+
 	</body>
 </html>

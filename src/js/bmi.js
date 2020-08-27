@@ -17,9 +17,11 @@ femalelabel.addEventListener("click", function(){
 
 
 // Öffentliche Variablen
-
-//var auswertung;
 var bmi;
+var underweight;
+var optimum = "<div class='hint optimum'><strong>Alles im grünen Bereich</strong><br>Du brauchst dir keine Sorgen machen, dein BMI liegt im grünen Bereich.</div>"; 
+var overweight = "<div class='hint underweight'><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div>";
+
 
 function getGender(){
 	var gender;
@@ -42,13 +44,9 @@ function berechnenBMI(){
 	// BMI errechenn
 	bmi = parseInt(weight) / ((parseInt(size) / 100) * (parseInt(size) / 100));
 	bmi = bmi.toFixed(2);
-
-	// Dev Ausgabe
-	alert(bmi);
 }
 
 function reporter() {
-	var hint = document.getElementById("report");
 	var agevalue = document.getElementById("age").value;
 	var auswertung;
 
@@ -57,58 +55,49 @@ function reporter() {
 
 	// BMI Skalieren für Vergleich
 	reportbmi = bmi - agedif;
-	alert(reportbmi + bmi + agedif);
 
 	if(getGender() == 1){
 		reportbmi = reportbmi - 1;
-		alert("Ja");
 		if(reportbmi < 18){
-			auswertung = "Dein BMI ist zu klein.";	
+			auswertung = underweight;	
 		}
 		
 		else if(reportbmi >= 18 && reportbmi <= 24){
-			auswertung = "Alles im grünen Bereich.";
-
+			auswertung = optimum;
 		}
 		
 		else if(reportbmi > 24){
-			auswertung = "Du solltest mehr Sport treiben.";
+			auswertung = overweight;
 		}
-		alert(auswertung);
-
-
 	}
 
 	else if(getGender() == 2) {
 			if(reportbmi < 19){
-				auswertung = "Dein BMI ist zu klein.";	
+				auswertung = underweight;	
 			}
 			
 			else if(reportbmi >= 19 && reportbmi <= 24){
-				auswertung = "Alles im grünen Bereich.";
-
+				auswertung = optimum;
 			}
 			
 			else if(reportbmi > 24){
-				auswertung = "Du solltest mehr Sport treiben.";
+				auswertung = overweight;
 			}
-			alert(auswertung);
 	}
-
-
-
-	hint.innerHTML = auswertung;
-
+	
+	var poster = document.getElementById("report");
+	poster.innerHTML = auswertung;
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
 }
 
-function reporteroutput() {
-	var hint = document.getElementById("hint");
+// Reporter Output vars
 
-	hint.innerHTML = auswertung;
-}
 
 function berechnen(){
 	berechnenBMI();
+	underweight = "<div class='hint underweight'><div>" +bmi +"</div><div></div><strong>Untergewicht</strong><br>Du leidest an Untergewicht.</div>"; 
+
 	reporter();
-	//reporteroutput();
 }
+

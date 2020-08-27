@@ -17,6 +17,7 @@ body {
 	background: #F7F9FB;
 	font-size: 1rem;
 	color: var(--grey);
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -40,6 +41,22 @@ a:hover::after {
 	border-top: 2px solid var(--blue);
 }
 
+h1, h2, h3, button {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 500;
+}
+
+h1 {
+	color: var(--blue);
+}
+
+h2 {
+	color: var(--grey);
+}
+
+p {
+	color: var(--lightgrey);
+}
 
 
 #wrapper{
@@ -94,6 +111,21 @@ input, select {
 	padding: 0 15px;
 	font-weight: bold;
 	color: var(--lightgrey);
+}
+
+input[type=radio] {
+	visibility: hidden;
+	display: none;
+}
+
+.genderlabel {
+	padding: 10px;
+	border-radius: 3px;
+	border: 1px solid var(--lightgrey);
+	height: 150px;
+	width: 150px;
+	background: #fff;
+	display: inline-block;
 }
 
 

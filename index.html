@@ -5,40 +5,12 @@
 		<title>BMI-Rechner</title>
 		<script src="src/js/bmi.js"></script>
 		<link rel="stylesheet" href="src/css/style.css">
+
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
-<!-- 		<h1>BMI-Rechner</h1>
-
-		<label>Geschlecht:
-			<select name="geschlecht" id="geschlecht">
-				<option value="0" selected="selected">M&auml;nnlich</option>
-				<option value="1">Weiblich</option>
-			</select>
-		</label>
-
-		<label>Gr&ouml;ße in cm: 
-			<input name="groesse" id="groesse" type="text" size="10" maxlength="3"/>
-		</label>
-
-		<label>Gewicht in kg:
-			<input name="gewicht" id="gewicht" type="text" size="10" maxlength="3"/>
-		</label>
-
-		<label>Alter:
-			<select name="alter" id="alter">
-				<option value="0">19-24</option>
-				<option value="1">25-34</option>
-				<option value="2">35-44</option>
-				<option value="3">45-54</option>
-				<option value="4">55-64</option>
-				<option value="5">&uuml;ber 64</option>
-			</select>
-		</label>
-
-		<button type="button" id="berechnen" onclick="berechnen()">berechnen</button> -->
-
-
 		<div id="wrapper">
 			<div id="accent"></div>
 			<div class="container line">
@@ -48,12 +20,10 @@
 			<div class="container line">
 				<h2>1. Bitte wähle dein Geschlecht aus.</h2>
 
-				<fieldset>
 					<input type="radio" id="female" name="gender" value="female">
-					<label for="female">Female</label><br>
+					<label id="femalelabel" class="genderlabel" for="female">F</label>
 					<input type="radio" id="male" name="gender" value="male">
-					<label for="male">Male</label><br>
-				</fieldset>
+					<label id="malelabel" class="genderlabel" for="male">M</label>
 
 				<h2>2. Verrate uns deine Körpergröße.</h2>
 				<div class="combinedinput">
@@ -80,6 +50,6 @@
 				<button onclick="berechnen()" >BMI berechnen</button>
 			</div>
 		</div>
-
+		<script src="src/js/bmi.js"></script>
 	</body>
 </html>

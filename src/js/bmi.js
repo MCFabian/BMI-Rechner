@@ -1,8 +1,26 @@
 // JavaScript Document
 
+
+
+document.getElementsByClassName("genderlabel").addEventListener("click", function(){
+	alert("Hallo");
+	if(document.getElementById("female").checked) {
+		document.getElementById("femalelabel").style.borderColor = "red";
+	}
+
+	else if (document.getElementById("male").checked){
+		document.getElementById("malelabel").style.borderColor = "red";
+	}
+});
+
+
+
+
 // Deklarieren Sie zwei öffentliche Variablen "auswertung" und "bmi"
 
 var gender; // 1 = Female, 2 = Male
+var auswertung;
+var bmi;
 
 function getGender(){
 	if(document.getElementById("female").checked) {

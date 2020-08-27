@@ -1,37 +1,37 @@
 // JavaScript Document
 
+// Set CSS Style for active Gender
+femalelabel = document.getElementById("femalelabel");
+malelabel = document.getElementById("malelabel");
 
+malelabel.addEventListener("click", function(){
+	malelabel.classList.add("genderlabel-active");
+	femalelabel.classList.remove("genderlabel-active");
+});
 
-document.getElementsByClassName("genderlabel").addEventListener("click", function(){
-	alert("Hallo");
-	if(document.getElementById("female").checked) {
-		document.getElementById("femalelabel").style.borderColor = "red";
-	}
-
-	else if (document.getElementById("male").checked){
-		document.getElementById("malelabel").style.borderColor = "red";
-	}
+femalelabel.addEventListener("click", function(){
+	malelabel.classList.remove("genderlabel-active");
+	femalelabel.classList.add("genderlabel-active");
 });
 
 
 
+// Öffentliche Variablen
 
-// Deklarieren Sie zwei öffentliche Variablen "auswertung" und "bmi"
-
-var gender; // 1 = Female, 2 = Male
-var auswertung;
+//var auswertung;
 var bmi;
 
 function getGender(){
+	var gender;
 	if(document.getElementById("female").checked) {
-		var gender = 1;
+		gender = 1;
 	}
 
 	else if (document.getElementById("male").checked){
-		var gender = 2;
+		gender = 2;
 	}
 
-	alert(gender);
+	return gender;
 }
 
 function berechnenBMI(){
@@ -47,69 +47,68 @@ function berechnenBMI(){
 	alert(bmi);
 }
 
-function auswertungMann(){
-	// Werten Sie hier den BMI für Männer aus.
-	// Beispiel: Auswertung Mann, Alter 19-24
-	if(document.getElementById('age').value == 0){
-		if(bmi < 19){
+function reporter() {
+	var hint = document.getElementById("report");
+	var agevalue = document.getElementById("age").value;
+	var auswertung;
+
+	// Norminalalter = 0
+	agedif = agevalue - 0;
+
+	// BMI Skalieren für Vergleich
+	reportbmi = bmi - agedif;
+	alert(reportbmi + bmi + agedif);
+
+	if(getGender() == 1){
+		reportbmi = reportbmi - 1;
+		alert("Ja");
+		if(reportbmi < 18){
 			auswertung = "Dein BMI ist zu klein.";	
 		}
 		
-		if(bmi > 18 && bmi < 25){
+		else if(reportbmi >= 18 && reportbmi <= 24){
 			auswertung = "Alles im grünen Bereich.";
 
 		}
 		
-		if(bmi > 24){
+		else if(reportbmi > 24){
 			auswertung = "Du solltest mehr Sport treiben.";
 		}
 		alert(auswertung);
+
+
 	}
+
+	else if(getGender() == 2) {
+			if(reportbmi < 19){
+				auswertung = "Dein BMI ist zu klein.";	
+			}
+			
+			else if(reportbmi >= 19 && reportbmi <= 24){
+				auswertung = "Alles im grünen Bereich.";
+
+			}
+			
+			else if(reportbmi > 24){
+				auswertung = "Du solltest mehr Sport treiben.";
+			}
+			alert(auswertung);
+	}
+
+
+
+	hint.innerHTML = auswertung;
+
 }
 
-function auswertungFrau(){
-	if(document.getElementById('age').value == 0){
-		if(bmi < 18){
-			auswertung = "Dein BMI ist zu klein.";	
-		}
-		
-		if(bmi > 17 && bmi < 24){
-			auswertung = "Alles im grünen Bereich.";
+function reporteroutput() {
+	var hint = document.getElementById("hint");
 
-		}
-		
-		if(bmi > 23){
-			auswertung = "Du solltest mehr Sport treiben.";
-		}
-		alert(auswertung);
-	}
+	hint.innerHTML = auswertung;
 }
 
 function berechnen(){
-
 	berechnenBMI();
-	alert("BMI" +bmi);
-
-	if(document.getElementById("female").checked) {
-		var gender = 1;
-	}
-
-	else if (document.getElementById("male").checked){
-		var gender = 2;
-	}
-
-	if(gender == 1){
-		alert("Female");
-		auswertungFrau();
-	}
-
-	else if (gender == 2){
-		alert("Male");
-		auswertungMann();
-	}
-
-	// Berechnen Sie hier den BMI, unterscheiden dabei zwischen Mann und Frau und geben Sie das Ergebnis aus.
-	// Sie können zur Ausgabe ein "alert" nutzen oder ein zusätzliches Textfeld in Ihrem Dokument einfügen.
-	// Hinweis: Da Sie für die Berechnung und Auswertung schon eigene Funktionen haben, können Sie diese hier einfach aufrufen,
-	// z.B.: "berechnenBMI();"
+	reporter();
+	//reporteroutput();
 }

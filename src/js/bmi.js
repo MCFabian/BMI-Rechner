@@ -96,7 +96,9 @@ function reporter() {
 
 function berechnen(){
 	berechnenBMI();
-	underweight = "<div class='hint underweight'><div>" +bmi +"</div><div></div><strong>Untergewicht</strong><br>Du leidest an Untergewicht.</div>"; 
+	underweight = "<div class='hint underweight'><div>" +bmi +"</div><div><strong>Untergewicht</strong><br>Du leidest an Untergewicht.</div></div>"; 
+	optimum = "<div class='hint optimum'><div>" +bmi +"</div><div><strong>Alles im grünen Bereich</strong><br>Dein BMI liegt im grünen Bereich, du brauchst dir keine Sorgen machen.</div></div>";
+	overweight = "<div class='hint underweight'><div>" +bmi +"</div><div><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div></div>"; 
 
 	reporter();
 }

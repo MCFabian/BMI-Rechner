@@ -34,12 +34,13 @@ a {
 }
 
 h1, h2, h3, button {
-	font-family: 'Source Code Pro', monospace;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 500;
 }
 
 h1 {
 	color: var(--blue);
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 h2 {
@@ -53,7 +54,7 @@ p {
 
 #wrapper{
 	background: #fff;
-	width: 50%;
+	width: 600px;
 	margin: auto;
 	position: relative;
 	height: 100%;
@@ -70,6 +71,56 @@ p {
 .container {
 	padding: 20px 20px;
 }
+
+.small-container {
+	width: 90%;
+	margin: auto;
+	padding: 20px;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 2px 39px 0px rgba(39,113,252,0.15);
+	-moz-box-shadow: 0px 2px 39px 0px rgba(39,113,252,0.15);
+	box-shadow: 0px 2px 39px 0px rgba(39,113,252,0.15);
+	margin: 20px auto;
+}
+
+.flex {
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#header {
+	background-image: url("..src/img/header.jpg");
+	background-size: 120%;
+}
+
+
+
+
+#main-container {
+	background: #fff;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	position: relative;
+	width: 80%;
+	margin: auto;
+}	
+
+#main-container::before {
+	height: 40px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	position: absolute;
+	content: "";
+	width: 100%;
+	background: #fff;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+
 
 .line {
 	border-bottom: 1px solid var(--divider);
@@ -131,15 +182,21 @@ input[type=radio] {
 
 .genderlabel {
 	padding: 10px;
-	border-radius: 3px;
-	border: 1px solid var(--lightgrey);
+	border-radius: 5px;
+	border: 2px solid var(--divider);
 	height: 150px;
 	width: 150px;
 	background: #fff;
 	display: inline-block;
 	position: relative;
-	margin-right: 10px;
+	/* margin-right: 10px; */
+	transition: 0.3s;
 	cursor: pointer;
+	margin: auto;
+}
+
+.genderlabel:hover {
+	border: 2px solid var(--lightgrey);
 }
 
 .genderlabel-active {
@@ -161,15 +218,23 @@ input[type=radio] {
 	transition: 0.3s;
 }
 
+#malelabel, #femalelabel {
+	background-position: center;
+	background-size: 60px;
+	background-repeat: no-repeat;
+
+}
+
+#femalelabel {
+	background-image: url("../img/female.png");
+}
+
+#malelabel {
+	background-image: url("../img/male.png");
+}
+
 .hint {
-	padding: 20px;
-	font-size: 1rem;
-	border-radius: 3px;
-	display: flex;
-	display: -ms-flexbox;
-	flex-direction: row;
-	flex-wrap: wrap;
-	padding: 15px;
+
 }
 
 .overhint {

@@ -18,20 +18,24 @@
 		</div>
 		<div id="wrapper">
 			<div id="accent"></div>
-			<div class="container line">
-				<h1>BMI Rechner</h1>
-				<p>Berechne deinen BMI nach Geschlecht und Alter. Den Quellcode findest du auf <a href="https://github.com/MCFabian/BMI-Rechner">GitHub</a></p>
+			<div class="container ">
+				<div id="header" class="small-container">
+					<h1>BMI Rechner</h1>
+					<p>Bist du zu dick oder zu dünn, oder liegst du im idealen Bereich?</p>
+
+				</div>
 			</div>
+
 			<div id="report" class="">
 			</div>
-			<div class="container line">
-				<h2>1. Bitte wähle dein Geschlecht aus.</h2>
-
+			<div class="container small-container">
 					<input type="radio" id="female" name="gender" value="female">
 					<label id="femalelabel" class="genderlabel" for="female">F</label>
 					<input type="radio" id="male" name="gender" value="male">
 					<label id="malelabel" class="genderlabel" for="male">M</label>
 
+			</div>
+			<div class="small-container container">
 				<h2>2. Verrate uns deine Körpergröße.</h2>
 				<div class="combinedinput">
 					<input maxlength="3" id="size" placeholder="Körpergröße" type="text"><div>CM</div>
@@ -51,7 +55,6 @@
 					<option value="4">55-64</option>
 					<option value="5">&uuml;ber 64</option>
 				</select>
-
 			</div>
 			<div class="container">
 				<button onclick="berechnen()" >BMI berechnen</button>

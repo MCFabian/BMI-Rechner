@@ -18,9 +18,9 @@ femalelabel.addEventListener("click", function(){
 
 // Öffentliche Variablen
 var bmi;
-var underweight;
-var optimum = "<div class='hint optimum'><strong>Alles im grünen Bereich</strong><br>Du brauchst dir keine Sorgen machen, dein BMI liegt im grünen Bereich.</div>"; 
-var overweight = "<div class='hint underweight'><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div>";
+//var underweight;
+//var optimum = "<div class='hint optimum'><strong>Alles im grünen Bereich</strong><br>Du brauchst dir keine Sorgen machen, dein BMI liegt im grünen Bereich.</div>"; 
+//var overweight = "<div class='hint underweight'><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div>";
 
 
 function getGender(){
@@ -34,6 +34,7 @@ function getGender(){
 	}
 
 	else {
+		// Für den Fall das jemand nen Radiobutton austrickst - muss also nicht schön sein
 		alert("Kein Geschlecht ausgewählt");
 	}
 
@@ -141,7 +142,7 @@ function berechnen(){
 	berechnenBMI();
 	underweight = "<div class='small-container flex hint underweight'><div>" +bmi +"</div><div><strong>Untergewicht</strong><br>Du leidest an Untergewicht.</div></div>"; 
 	optimum = "<div class='small-container flex hint optimum'><div>" +bmi +"</div><div><strong>Alles im grünen Bereich</strong><br>Dein BMI liegt im grünen Bereich, du brauchst dir keine Sorgen machen.</div></div>";
-	errortext = "<div class='small-container flex hint optimum'><div>FEHLEr</div><div><strong>Alles im grünen Bereich</strong><br>Dein BMI liegt im grünen Bereich, du brauchst dir keine Sorgen machen.</div></div>"
+	errortext = "<div class='small-container hint underweight'><strong>Fehler</strong><br>Bitte überprüfe deine Eingaben.</div>";
 	overweight = "<div class='small-container flex hint underweight'><div>" +bmi +"</div><div><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div></div>"; 
 	reporter();
 }

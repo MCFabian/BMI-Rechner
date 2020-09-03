@@ -1,8 +1,8 @@
 // JavaScript Document
 
 // Set CSS Style for active Gender
-femalelabel = document.getElementById("femalelabel");
-malelabel = document.getElementById("malelabel");
+var femalelabel = document.getElementById("femalelabel");
+var malelabel = document.getElementById("malelabel");
 
 malelabel.addEventListener("click", function(){
 	malelabel.classList.add("genderlabel-active");
@@ -18,10 +18,6 @@ femalelabel.addEventListener("click", function(){
 
 // Öffentliche Variablen
 var bmi;
-//var underweight;
-//var optimum = "<div class='hint optimum'><strong>Alles im grünen Bereich</strong><br>Du brauchst dir keine Sorgen machen, dein BMI liegt im grünen Bereich.</div>"; 
-//var overweight = "<div class='hint underweight'><strong>Übergewicht</strong><br>Du leidest an Übergewicht.</div>";
-
 
 function getGender(){
 	var gender;
@@ -46,18 +42,19 @@ function berechnenBMI(){
 	var weight = document.getElementById("weight").value;
 	var size = document.getElementById("size").value;
 
-
-
 	if(weight == "" && size == "" ){
 		bmi = 0;
 	}
 
-
 	else if(weight == "" || size == "" ){
 		bmi = 0;
 	}
 
 	else if(weight == "" || size == "" ){
+		bmi = 0;
+	}
+
+	else if (isNaN(weight) || isNaN(size)) {
 		bmi = 0;
 	}
 
@@ -66,15 +63,6 @@ function berechnenBMI(){
 		bmi = parseInt(weight) / ((parseInt(size) / 100) * (parseInt(size) / 100));
 		//bmi = weight / ((size / 100) * (size / 100));
 		bmi = bmi.toFixed(2);
-
-		if (bmi === 'undefined'){
-			bmi = 0;
-		}
-
-		else {
-
-		}
-
 	}
 
 

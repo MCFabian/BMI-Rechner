@@ -6,7 +6,6 @@
 	--grey: #26243a;
 	--lightgrey: #6C83AF;
 	--divider: #D1DCF0;
-
 	--green: #2ea44f;
 	--red: #FF4452;
 }
@@ -30,7 +29,6 @@ body {
 
 a {
 	text-decoration: none;
-
 }
 
 h1, h2, h3, button {
@@ -50,7 +48,6 @@ h2 {
 p {
 	color: var(--lightgrey);
 }
-
 
 #wrapper{
 	background: #fff;
@@ -95,9 +92,6 @@ p {
 	background-size: 120%;
 }
 
-
-
-
 #main-container {
 	background: #fff;
 	border-bottom-left-radius: 20px;
@@ -119,8 +113,6 @@ p {
 	right: 0;
 	top: 0;
 }
-
-
 
 .line {
 	border-bottom: 1px solid var(--divider);
@@ -189,7 +181,6 @@ input[type=radio] {
 	background: #fff;
 	display: inline-block;
 	position: relative;
-	/* margin-right: 10px; */
 	transition: 0.3s;
 	cursor: pointer;
 	margin: auto;

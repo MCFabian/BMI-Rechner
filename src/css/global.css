@@ -3,7 +3,6 @@
 
 /* Dcument Inforamtions -------------------------------------------------------
 /* This Document is only used for the Intranet Service claimed by Fabian Rauer 
-/* Written and published for the domain intranet.fabianr.de
 /* Created 2018/2019/2020
 /* ----------------------------------------------------------------------------
 
@@ -2644,8 +2643,6 @@ input[type=radio] {
 	padding: 10px 30px 10px 10px;
 	text-align: center;
 	font-size: 3rem;
-
-
 }
 
 .hint > div:last-child {

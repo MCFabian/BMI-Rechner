@@ -1,17 +1,19 @@
 // JavaScript Document
 
 // Set CSS Style for active Gender
-var femalelabel = document.getElementById("femalelabel");
-var malelabel = document.getElementById("malelabel");
-
-malelabel.addEventListener("click", function(){
-	malelabel.classList.add("genderlabel-active");
-	femalelabel.classList.remove("genderlabel-active");
-});
-
-femalelabel.addEventListener("click", function(){
-	malelabel.classList.remove("genderlabel-active");
-	femalelabel.classList.add("genderlabel-active");
+window.addEventListener("load", function(){
+	var femalelabel = document.getElementById("femalelabel");
+	var malelabel = document.getElementById("malelabel");
+	
+	malelabel.addEventListener("click", function(){
+		malelabel.classList.add("genderlabel-active");
+		femalelabel.classList.remove("genderlabel-active");
+	});
+	
+	femalelabel.addEventListener("click", function(){
+		malelabel.classList.remove("genderlabel-active");
+		femalelabel.classList.add("genderlabel-active");
+	});
 });
 
 
